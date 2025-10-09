@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&family=Josefin+Sans:wght@400;700&display=swap');
+
+/* ========================
+   :root — Theme Variables
+======================== */
+:root {
+  --color-bg: #132088;        /* deep navy background */
+  --color-accent: #E0D2E8;    /* lavender accent */
+  --color-text: #FFFFFF;      /* white text for headers */
+}
+
+/* ========================
+   Body & Layout
+======================== */
+body {
+  background: var(--color-bg);
+  color: var(--color-accent);
+  font-family: 'Anonymous Pro', monospace;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ========================
+   Header
+======================== */
+header {
+  width: 40%;
+  max-width: 600px;
+  padding: 1rem;
+  text-align: center;
+}
+
+header p.logo {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+nav {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+nav a {
+  color: var(--color-accent);
+  margin: 0 0.75rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--color-text);
+}
+
+/* ========================
+   Main Content
+======================== */
+main {
+  width: 40%;
+  padding: 1rem;
+}
+
+main p {
+  width: 50%;               /* controls container width */
+  margin-left: auto;        /* center horizontally */
+  margin-right: auto;
+  margin-bottom: 1.5rem;    /* spacing below paragraph */
+}
+
+
+/* ========================
+   Headings
+======================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', sans-serif;
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: normal;
+}
+
+/* ========================
+   Post Layout
+======================== */
+.post {
+  display: grid;
+  grid-template-columns: 120px auto;
+  gap: 1rem;
+  align-items: start;
+  margin-bottom: 2rem;
+}
+
+.post-date {
+  color: var(--color-text);
+  font-weight: normal;
+  font-size: 0.9rem;
+  text-align: left;
+  display: flex;
+  align-items: center; /* vertical center with title only */
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-title {
+  margin: 0;
+}
+
+.post-title a {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.post-title a:hover {
+  text-decoration: underline;
+}
+
+.post p {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.5rem;
+  color: var(--color-accent);
+}
+
+/* ========================
+   Paragraphs & Links
+======================== */
+p {
+  margin-bottom: 1rem;
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-text);
+}
+
+/* ========================
+   Code Blocks
+======================== */
+code, pre {
+  font-family: 'Anonymous Pro', monospace;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  color: var(--color-accent);
+}
+
+/* ========================
+   Footer
+======================== */
+footer {
+  width: 50%;
+  margin-top: 3rem;
+  color: var(--color-accent);
+}
+
+/* ========================
+   Responsive Design
+======================== */
+@media (max-width: 900px) {
+  header, main, footer {
+    width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  header, main, footer {
+    width: 90%;
+    padding: 1rem;
+  }
+
+  .post {
+    grid-template-columns: 1fr;
+  }
+
+  .post-date {
+    margin-bottom: 0.25rem;
+  }
+
+  .post p {
+    width: 100%;
+  }
+}
