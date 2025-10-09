@@ -1,2 +1,2 @@
-# thewildblueyonder.github.io
+# wildblueyonder.github.io
 Tan's Website!
