@@ -4,9 +4,11 @@
    :root — Theme Variables
 ======================== */
 :root {
-  --color-bg: #132088;        /* deep navy background */
-  --color-accent: #E0D2E8;    /* lavender accent */
-  --color-text: #FFFFFF;      /* white text for headers */
+  --color-bg: #061c48;    
+  --color-accent: #e0d2e8;
+  --color-text: #FFFFFF;
+  --content-width: 30rem;
+  --offset: -120px - 1rem;
 }
 
 /* ========================
@@ -14,7 +16,7 @@
 ======================== */
 body {
   background: var(--color-bg);
-  color: var(--color-accent);
+  color: var(--color-text);
   font-family: 'Anonymous Pro', monospace;
   margin: 0;
   padding: 0;
@@ -27,48 +29,68 @@ body {
    Header
 ======================== */
 header {
-  width: 40%;
-  max-width: 600px;
+  width: var(--content-width);
   padding: 1rem;
-  text-align: center;
+  text-align: left;
+
 }
 
 header p.logo {
   margin: 0;
   font-weight: 500;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 nav {
-  text-align: center;
+  text-align: left;
   margin-top: 0.5rem;
+  margin-left: calc(var(--offset));
 }
 
 nav a {
   color: var(--color-accent);
-  margin: 0 0.75rem;
+  margin-right: 0.75rem;
   text-decoration: none;
 }
 
 nav a:hover {
   color: var(--color-text);
+  text-decoration: underline;
+}
+
+.back-link {
+  display: block;
+  text-align: center;
+}
+
+.link {
+  color: #ffffff;
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
 }
 
 /* ========================
    Main Content
 ======================== */
 main {
-  width: 40%;
+  width: var(--content-width);
   padding: 1rem;
 }
 
+/* paragraphs align naturally */
 main p {
-  width: 50%;               /* controls container width */
-  margin-left: auto;        /* center horizontally */
-  margin-right: auto;
-  margin-bottom: 1.5rem;    /* spacing below paragraph */
+  margin-bottom: 1.5rem;
 }
 
+main > p:last-of-type {
+  margin-bottom: 3em;
+}
+
+.post-page main {
+  width: 40rem; /* or whatever feels right */
+}
 
 /* ========================
    Headings
@@ -76,8 +98,8 @@ main p {
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Josefin Sans', sans-serif;
   color: var(--color-text);
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-weight: normal;
 }
 
@@ -89,16 +111,16 @@ h1, h2, h3, h4, h5, h6 {
   grid-template-columns: 120px auto;
   gap: 1rem;
   align-items: start;
+  margin-top: 2rem;
   margin-bottom: 2rem;
+  margin-left: calc(var(--offset));
 }
 
 .post-date {
-  color: var(--color-text);
-  font-weight: normal;
+  color: var(--color-accent);
   font-size: 0.9rem;
-  text-align: left;
   display: flex;
-  align-items: center; /* vertical center with title only */
+  align-items: center;
 }
 
 .post-content {
@@ -107,11 +129,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post-title {
-  margin: 0;
+  margin: 0 0 0.75rem 0;
 }
 
 .post-title a {
-  color: var(--color-text);
+  color: var(--color-accent);
   text-decoration: none;
 }
 
@@ -120,11 +142,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .post p {
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 1.5rem;
-  color: var(--color-accent);
+  margin: 0;
+  color: var(--color-text);
 }
 
 /* ========================
@@ -159,35 +178,10 @@ code, pre {
    Footer
 ======================== */
 footer {
-  width: 50%;
-  margin-top: 3rem;
+  width: var(--content-width);
+  margin-top: 1rem;
   color: var(--color-accent);
+  text-align: center;
 }
 
-/* ========================
-   Responsive Design
-======================== */
-@media (max-width: 900px) {
-  header, main, footer {
-    width: 75%;
-  }
-}
 
-@media (max-width: 600px) {
-  header, main, footer {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .post {
-    grid-template-columns: 1fr;
-  }
-
-  .post-date {
-    margin-bottom: 0.25rem;
-  }
-
-  .post p {
-    width: 100%;
-  }
-}
